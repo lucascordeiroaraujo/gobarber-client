@@ -11,10 +11,12 @@ import { ToastMessage, useToast } from '../../../hooks/toast';
 
 import Container from './style';
 
+/* eslint-disable */
 interface ToastProps {
   message: ToastMessage;
   style: object;
 }
+/* eslint-enable */
 
 const icons = {
   info: <FiInfo size={24} />,
@@ -39,7 +41,7 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
     <Container
       style={style}
       type={message.type}
-      hasDescription={!!message.description}
+      hasDescription={Number(!!message.description)}
     >
       {icons[message.type || 'info']}
 
